@@ -1,5 +1,3 @@
-'use client'
-
 import { createRoot } from 'react-dom/client';
 import { useOptimistic, useState, useRef , useEffect } from "react";
 import { useRequest } from './hooks/index.js';
@@ -55,8 +53,8 @@ export default function App() {
   }, [isPending])
   
   async function sendPost(formData) {
-    const sentMessage = await addPost(formData.get("post"));
-    setPosts((posts) => [...posts, {...sentMessage}]);
+    const sentPost = await addPost(formData.get("post"));
+    setPosts((posts) => [...posts, {...sentPost}]);
   }
   return isPending
     ? <p>it's loading the posts</p>

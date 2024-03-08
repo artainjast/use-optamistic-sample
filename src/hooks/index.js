@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
 export function useRequest(request) {
     const [data, setData] = useState([]);
@@ -20,7 +19,7 @@ export function useRequest(request) {
         fetchData();
 
     }, []);
-    
+
     return {
         isPending,
         data
